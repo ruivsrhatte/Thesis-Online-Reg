@@ -14,7 +14,7 @@
     <TITLE>DRLCIFI - Registration Form</TITLE>
 </head>
 <?php require_once "db.php";
-
+session_start();
 if (isset($_POST['submit'])) {
     $stdNUmber = $_POST['stdNo'];
 
@@ -27,14 +27,55 @@ if (isset($_POST['submit'])) {
 ?>
 
 <body>
-    <section class="vh-100 gradient-custom ">
-        <div id="register" class="container h-100">
-            <div class="row justify-content-center align-items-center h-100">
+    <section class="vh-100 gradient-custom py-5 ">
+        <div id="register" class="container h-100 ">
+            <div class="row justify-content-center align-items-center  h-100 ">
+
+              <!--
+                    INSTRUCTION 1
+                -->
+                <div class="col-12 col-9 col-xl-7 mb-5">
+                    <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
+                        <h3 class="mb-4 pb-2 pb-md-3 mb-md-0 pt-3  text-center text-light card-img-top" style="border-radius: 15px 15px 0px 0px; background-color: #980702"></h3>
+                        <div class="card-body p-4 p-md-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <h5 class="card-title" style="font-size: 25px;"> </h5>
+                                        <p align="justify" class="mb-4 pb-2 pb-md-0 mb-md-5">
+                                            Please fill-out this form properly. This will serve as your pre-admission form. After filling out this form, you need to go to the registrar's office to process your enrollment, and for you to be officially enrolled, bring the required documents for registration. Thank you.
+                                            Note: Please enter your information correctly to avoid a false record of your identity and expedite your document's processing.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                    INSTRUCTION 2
+                -->
+                <div class="col-12 col-9 col-xl-7  mb-3">
+                    <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
+                        <h3 class="mb-4 pb-2 pb-md-3 mb-md-0 pt-3  text-center text-light card-img-top" style="border-radius: 15px 15px 0px 0px; background-color: #980702">Old Student Pre-Admission Form</h3>
+                        <div class="card-body p-4 p-md-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <p>Please indicate complete and correct information for the records of the registrar. Write your response in all capital letters only. If the information asked is not available, just put NA.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                    START OF ADMISSION FORM
+                -->
                 <div class="col-12 col-lg-9 col-xl-7">
                     <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
-                        <h3 class="mb-4 pb-2 pb-md-3 mb-md-0 pt-3  text-center text-light card-img-top" style="border-radius: 15px 15px 0px 0px; background-color: #980702">
-                            Old Student Enrollment Form
-                        </h3>
+                        
                         <div class="card-body p-4 p-md-5">
                             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Student Information</h3>
                             <form class="form-container mx-auto" action="old-student-handler.php" enctype="multipart/form-data" method="post">
@@ -54,12 +95,14 @@ if (isset($_POST['submit'])) {
 
                                     <div class="col-md-6  mb-4">
                                         <div class="form-group">
-                                            <input type="text" name="stdNumber" class="form-control form-group" placeholder="Student No." required/>
+                                            <label>Student No.</label>
+                                            <input type="text" name="stdNumber" class="form-control form-group" placeholder="Student No." value="<?= $_SESSION['stdNo'] ?>" readonly />
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-group">
-                                            <input type="text" name="scholarship" class="form-control form-group" placeholder="Scholarship" required/>
+                                            <label>Scholarship</label>
+                                            <input type="text" name="scholarship" class="form-control form-group" placeholder="Scholarship" value="<?= $_SESSION['scholarship'] ?>" required />
                                         </div>
                                     </div>
 
@@ -67,19 +110,22 @@ if (isset($_POST['submit'])) {
                                 <div class="row">
                                     <div class="col-md-12  mb-4">
                                         <div class="form-group">
-                                            <input type="tel" name="contactNumber" class="form-control form-group" placeholder="Contact Number" required/>
+                                        <label>Contact No.</label>
+                                            <input type="tel" name="contactNumber" class="form-control form-group" placeholder="Contact Number" value="<?= $_SESSION['contactNo'] ?>" required />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6  mb-4">
                                         <div class="form-group">
-                                            <input type="text" name="sy" class="form-control form-group" placeholder="School Year" required/>
+                                        <label>School Year</label>
+                                            <input type="text" name="sy" class="form-control form-group" placeholder="School Year" value="<?= $_SESSION['sy'] ?>" required />
                                         </div>
                                     </div>
                                     <div class="col-md-6  mb-4">
+                                    <label>Sem</label>
                                         <select name="sem" class="select form-control">
-                                            <option value="" disabled selected hidden>-- Sem --</option>
+                                            <option value="" disabled selected hidden><?= $_SESSION['sem'] ?></option>
                                             <option name="1st" value="1st">1st</option>
                                             <option name="2nd" value="2nd">2nd</option>
                                         </select>
@@ -88,20 +134,21 @@ if (isset($_POST['submit'])) {
 
                                 <div class="row">
                                     <div class="col-md-6  mb-4">
-
+                                    <label>Year</label>
                                         <select name="yearLevel" class="select form-control" required>
-                                            <option value="" disabled selected hidden>-- Level Applied For --</option>
+                                            <option value="" disabled selected hidden><?= $_SESSION['year'] ?></option>
                                             <option name="1st Year" value="1st Year">1st Year</option>
-                                            <option name="2nd Year" value="2nd Yaer">2nd Yaer</option>
-                                            <option name="3rd Year" value="3rd Yaer">3rd Year</option>
-                                            <option name="4th Year" value="4th Year">4th Yaer</option>
+                                            <option name="2nd Year" value="2nd Year">2nd Year</option>
+                                            <option name="3rd Year" value="3rd Year">3rd Year</option>
+                                            <option name="4th Year" value="4th Year">4th Year</option>
                                             <option name="LET" value="LET">LET</option>
                                         </select>
 
                                     </div>
                                     <div class="col-md-6  mb-4">
+                                    <label>Block</label>
                                         <select name="block" class="select form-control">
-                                            <option value="" disabled selected hidden>-- Block --</option>
+                                            <option value="" disabled selected hidden><?= $_SESSION['block'] ?></option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
@@ -113,6 +160,7 @@ if (isset($_POST['submit'])) {
 
                                 <div class="row">
                                     <div class="col-12 mb-4">
+                                    
                                         <?php
                                         $optionData = '<option  disabled selected hidden id = "0">-- Courses Offered --</option>';
                                         $result = mysqli_query($con, "SELECT * FROM course");

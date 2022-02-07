@@ -24,78 +24,89 @@
     </div>
 -->
 
-<?php require_once "db.php";
-?>
+<?php require_once "db.php" ?>
 
 <body>
     <section>
-        <div class="col-12 col-lg-12 col-xl-12 mb-3">
-            <div class="card shadow-3-strong"">
-                        <img class=" card-img-top" src="img/227134314_3979003432208803_3711170756453396855_n.jpg" alt="">
-                <div class="card-body p-4 p-md-5 text-center">
-                    <div class="col-12 col-md-12 ">
-                        <div class="row justify-content-center align-items-center h-100">
-                            <div class="col-md-4">
-                                <button type="button" class="btn btn-success btn-lg mb-5" style="border-radius: 50px; 
+        <div id="" class="  ">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-12 col-xl-12 mb-3">
+                    <div class="card shadow-3-strong"">
+                        <img class=" card-img-top" src="img/coverPhoto.png" alt="">
+                        <div class="card-body p-4 p-md-5 text-center">
+                            <div class="col-12 col-md-12 ">
+                                <div class="row justify-content-center align-items-center h-100">
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-success btn-lg mb-5" style="border-radius: 50px; 
                                      width: 100%;border: none;
                                     background: #980702" onClick="document.getElementById('register').scrollIntoView();">
-                                    New Student
-                                </button>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="login.php" type="button" class="btn btn-success btn-lg mb-5 " style="border-radius: 50px; 
+                                            New Student
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="login.php" type="button" class="btn btn-success btn-lg mb-5 " style="border-radius: 50px; 
                                      width: 100%;border: none;
                                     background: #980702; color: white; text-decoration: none;">
-                                    Old Student
-                                </a>
+                                            Old Student
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
-                    <h5 class="card-title">About us</h5>
-                    <p align="justify" class="mb-4 pb-2 pb-md-0 mb-md-5" style="font-size: 30px;">
-                        The Dr. Ruby Lanting Casaul Educational Foundation, Incorporated Dr.
-                        Romeo B. Casaul Technological Institute Foundation, Incorporated
-                        is a non-profit, non-stock educational foundation.
-                        This institution
-                        began in 1997, when Dr. Romeo B. Casaul and Dr. Ruby Lanting Casaul, who
-                        were running Dr. Carlos S. Lanting College in Tandang Sora, Quezon City,
-                        decided to open a branch of the school in their hometown, the City of Tabasco, to
-                        develop rural manpower through baccalaureate and technical-vocational
-                        courses. This school was then known as Dr. Carlos S. Lanting College offering
-                        baccalaureate courses with its technical-vocational course. At present both
-                        Colleges both fully recognized by the Commission on Higher Education (CHED),
-                        the Technical Education and Skills Development (TESDA), and the Department
-                        of Education (DepEd). In June 2010, both institutions were converted into an
-                        educational foundation in honor of its founders, thus, the birth of Dr. Carlos S.
-                        Lanting College-Dr. Ruby Lanting Casaul Educational Foundation Incorporated,
-                        and the Romeo B. Casaul Technological Institute Foundation, Incorporated as
-                        non-stock non-profit educational foundation situated at the heart of the City of
-                        Tabaco, Province of Albay in the Bicol Region.
-                        <br>
-                        <br>
-                        To date, the institution continues to offer education in both baccalaureate
-                        and vocational courses, offering learning opportunities for students to choose
-                        from five baccalaureate degrees, namely, Bachelor of Science in Elementary
-                        Education (BEED) with specialization in General Education and Special
-                        Education (SPED), Bachelor of Science in Secondary Education (BSED) major in
-                        Mathematics, English, Filipino, and Social Science. Bachelor of Science in
-                        Business Administration (BSBA) major in Financial Management, Bachelor of
-                        Science in Hospitality Management (BSHM), Bachelor of Science in Computer
-                        5
-                        Science (BSCS), and the latest program approved by the Commission on Higher
-                        Education (CHED) the Bachelor of Science in Technical Teacher Education
-                        (BTTE).
-                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="vh-100 gradient-custom ">
+    <section class="vh-100 gradient-custom" style="">
         <div id="register" class="container py-5 h-100">
-            <div class="row justify-content-center align-items-center h-100 mb-100">
-                <div class="col-12 col-lg-9 col-xl-7 mb-3">
+            <div class="row justify-content-center h-100 mb-100">
+                <!--
+                    INSTRUCTION 1
+                -->
+                <div class="col-12 col-xl-7 col-sm-12 mb-5">
                     <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
-                        <h3 class="mb-4 pb-2 pb-md-3 mb-md-0 pt-3  text-center text-light card-img-top" style="border-radius: 15px 15px 0px 0px; background-color: #980702">Student Admission Form</h3>
+                        <h3 class="mb-4 pb-2 pb-md-3 mb-md-0 pt-3  text-center text-light card-img-top" style="border-radius: 15px 15px 0px 0px; background-color: #980702"></h3>
+                        <div class="card-body p-4 p-md-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <h5 class="card-title" style="font-size: 25px;"> </h5>
+                                        <p align="justify" class="mb-4 pb-2 pb-md-0 mb-md-5">
+                                            Please fill-out this form properly. This will serve as your pre-admission form. After filling out this form, you need to go to the registrar's office to process your enrollment, and for you to be officially enrolled, bring the required documents for registration. Thank you.
+                                            Note: Please enter your information correctly to avoid a false record of your identity and expedite your document's processing.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                    INSTRUCTION 2
+                -->
+                <div class="col-12 col-9 col-xl-7  mb-3">
+                    <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
+                        <h3 class="mb-4 pb-2 pb-md-3 mb-md-0 pt-3  text-center text-light card-img-top" style="border-radius: 15px 15px 0px 0px; background-color: #980702">Student Pre-Admission Form</h3>
+                        <div class="card-body p-4 p-md-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <p>Please indicate complete and correct information for the records of the registrar. Write your response in all capital letters only. If the information asked is not available, just put NA.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                    START OF ADMISSION FORM
+                -->
+                <div class="col-12 col-xl-7 col-sm-12 mb-3">
+                    <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
+
                         <div class="card-body p-4 p-md-5">
 
                             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Personal Information</h3>
@@ -117,11 +128,12 @@
 
                                         <div class="form-group">
                                             <object style="margin-left:20%">
-                                                <img id="preview" src="#" width="150" />
+                                                <img id="preview" src="img/id.JPG" width="150" alt="2X2 ID PIcture " />
                                             </object>
                                         </div>
+
                                         <div class="form-group">
-                                            <input name="userImage" type="file" id="imgInp" class="form-control form-group" accept="image/png, image/gif, image/jpeg/, image/jpg/">
+                                            <input name="userImage" type="file" id="imgInp" class="form-control form-group" accept="image/png, image/gif, image/jpeg/">
                                         </div>
                                         <script>
                                             imgInp.onchange = evt => {
@@ -142,9 +154,6 @@
                                             ?>
                                         </div>
                                     </div>
-
-
-
                                 </div>
 
                                 <div class="row">
@@ -207,9 +216,9 @@
                                         <select name="yearLevel" class="select form-control">
                                             <option value="" disabled selected hidden>-- Level Applied For --</option>
                                             <option name="1st Year" value="1st Year">1st Year</option>
-                                            <option name="2nd Year" value="2nd Yaer">2nd Yaer</option>
-                                            <option name="3rd Year" value="3rd Yaer">3rd Year</option>
-                                            <option name="4th Year" value="4th Year">4th Yaer</option>
+                                            <option name="2nd Year" value="2nd Year">2nd Year</option>
+                                            <option name="3rd Year" value="3rd Year">3rd Year</option>
+                                            <option name="4th Year" value="4th Year">4th Year</option>
                                             <option name="LET" value="LET">LET</option>
                                         </select>
 
@@ -398,18 +407,36 @@
 
                             <!-- FATHERS INFO START-->
                             <label class="form-label">Father's Information</label>
+
                             <div class="row">
-                                <div class="col-md-5 mb-4">
+                                <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="text" name="fathersName" class="form-control form-group" placeholder="Name" />
+                                        <input type="text" name="fathersSurname" class="form-control form-group" placeholder="Surname" />
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <input type="text" name="fathersGivenName" class="form-control form-group" placeholder="Given Name" />
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <input type="text" name="fathersMiddleName" class="form-control form-group" placeholder="Middle Name" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
                                     <div class="form-group">
                                         <input type="text" name="fathersOccupation" class="form-control form-group" placeholder="Occupation" />
                                     </div>
                                 </div>
-                                <div class="col-md-3 mb-">
+                            </div>
+
+                            <div class="row">      
+                                <div class="col-md-6 mb-4">
                                     <div class="form-group">
                                         <input type="tel" name="fathersContact" class="form-control form-group" placeholder="Contact No." />
                                     </div>
@@ -420,19 +447,36 @@
                             <!-- MOTHERS INFO START-->
                             <label class="form-label">Mother's Information</label>
                             <div class="row">
-                                <div class="col-md-5 mb-4">
+                                <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="text" name="mothersName" class="form-control form-group" placeholder="Name" />
+                                        <input type="text" name="MothersSurname" class="form-control form-group" placeholder="Surname" />
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-4">
+                                <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="text" name="mothersOccupation" class="form-control form-group" placeholder="Occupation" />
+                                        <input type="text" name="MothersGivenName" class="form-control form-group" placeholder="Given Name" />
                                     </div>
                                 </div>
-                                <div class="col-md-3 mb-">
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="tel" name="mothersContact" class="form-control form-group" placeholder="Contact No." />
+                                        <input type="text" name="MothersMiddleName" class="form-control form-group" placeholder="Middle Name" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <input type="text" name="MothersOccupation" class="form-control form-group" placeholder="Occupation" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">      
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-group">
+                                        <input type="tel" name="MothersContact" class="form-control form-group" placeholder="Contact No." />
                                     </div>
                                 </div>
                             </div>
@@ -517,7 +561,7 @@
                 <!--
                    EDUCATIONAL HISTORY
                 -->
-                <div class="col-12 col-9 col-xl-7">
+                <div class="col-12 col-9 col-xl-7 mb-3">
                     <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
                         <div class="card-body p-4 p-md-5">
                             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Educational History</h3>
@@ -630,14 +674,48 @@
                                         <small><i><label for="collegeYear" class="form-label">e.g. 2018-2022</label></i></small>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-6 mb-1">
-                                    <div class="form-group">
-                                        <input name="qrImage" type="file" id="imgInp" class="form-control form-group" accept="image/png, image/gif, image/jpeg/">
-                                        <label class="form-label">Upload a picture of your signature to be generated as your personal QR Code after you are officially enrolled.</label>
-                                    </div>
-                                </div>
                             </div>
                             <!-- COLLEGE END-->
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--
+                   VACCINATION
+                -->
+                <div class="col-12 col-9 col-xl-7">
+                    <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Vaccine</h3>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 mb-1 ">
+                                    <select name="vaccine" class="select form-control" onchange="showDiv(this)">
+                                        <option value="" disabled selected hidden>-- Vaccination--</option>
+                                        <option value="Fully Vaccinated">Fully Vaccinated</option>
+                                        <option value="Partially Vaccinated">Partially Vaccinated</option>
+                                        <option value="Not Vaccinated">Not Vaccinated</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- VACCINATION CARD IMAGE START-->
+                            <div class="row">
+                                <div class="col-md-12  mb-4">
+                                    <div class="form-group">
+                                        <input name="vacsImage" type="file" style="display: none;" id="vacsImg" class="form-control form-group" accept="image/png, image/gif, image/jpeg/">
+                                    </div>
+                                    <div class="form-group float-center " id="vacsPreview1" style="display:none">
+                                        <object style="margin-left:4%; ">
+                                            <img id="vacsPreview" src="img/LOGO-CASAUL1.png" style="border:solid 1px black" width="500" height="300" alt="2X2 ID PIcture" />
+                                        </object>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- VACCINATION CARD IMAGE END-->
+
                             <!-- BUTTON -->
                             <div class="col-12 col-lg-9 col-xl-7">
                                 <div class=" shadow-3-strong card-registration mb-5" style="border-radius: 15px;">
@@ -653,12 +731,46 @@
                             </div>
                             <!-- END OF BUTTON  -->
                         </div>
-
                     </div>
                 </div>
+
                 </form>
             </div>
         </div>
     </section>
+    <script type="text/javascript">
+        //TO SHOW THE IMAGE INPUT
+        function showDiv(select) {
+            if (select.value == "Fully Vaccinated") {
 
+                document.getElementById('vacsImg').style.display = "block";
+                document.getElementById("vacsImg").value = "";
+                document.getElementById("vacsPreview").src = "img/LOGO-CASAUL1.png";
+
+            } else if (select.value == "Partially Vaccinated") {
+
+                document.getElementById('vacsImg').style.display = "block";
+                document.getElementById("vacsImg").value = "";
+                document.getElementById("vacsPreview").src = "img/LOGO-CASAUL1.png";
+
+            } else {
+
+                document.getElementById('vacsImg').style.display = "none";
+                document.getElementById('vacsPreview1').style.display = "none";
+                document.getElementById("vacsImg").value = "";
+                document.getElementById("vacsPreview").src = "img/LOGO-CASAUL1.png";
+
+            }
+        }
+    </script>
+    <script>
+        //SELECT AN IMAGE
+        vacsImg.onchange = evt => {
+            const [file] = vacsImg.files
+            if (file) {
+                vacsPreview.src = URL.createObjectURL(file);
+                vacsPreview1.style.display = "block";
+            }
+        }
+    </script>
 </body>

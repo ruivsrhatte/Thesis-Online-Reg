@@ -56,16 +56,19 @@
                             ?>
                             <div class="text-center card-footer" <p class="r">
                                 <b class="">NOTE:</b> <br>This is just a pre-registration.
-                                <br>To be officially enrolled, please pay a minimum amount of
-                                <b>&#8369;1000 </b>
+                                To be officially enrolled, please present your 
+                                <br>
+                                <b>QR ID</b> 
                                 at the accounting office of
+                                <br>
                                 <b>Dr. Ruby Lanting Casaul Educational Foundation, Inc.</b>
                                 located at
-                                <b>Tomas Cabiles St., San Juan Tabaco City.</b>
+                                <br>
+                                <b>Tomas Cabiles St., San Juan Tabaco City for further process.</b>
+                                <br>
+                                Thank you!
                                 </p>
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="alert"><a class="text text-light" href="index.php">Exit</a></button>
-                            
-                            
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="alert"><a class="text text-light" href="index.php">Exit</a></button>                      
                             </div>
                         </div>
                     </div>

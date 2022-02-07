@@ -25,7 +25,7 @@ if (isset($_POST['enroll'])) {
                 $imgData = addslashes(file_get_contents($_FILES['userImage']['tmp_name']));
                 
                 $stdNumber = $_POST['stdNumber'];
-                $qrData = addslashes(file_get_contents($_FILES['qrImage']['tmp_name']));
+                //$qrData = addslashes(file_get_contents($_FILES['qrImage']['tmp_name']));
                 $email = $_POST['email'];
                 $scholarship = $_POST['scholarship'];
                 $lname = $_POST['lname'];
@@ -107,10 +107,9 @@ if (isset($_POST['enroll'])) {
                 $collegeAddress = $_POST['collegeAddress'];
                 $collegeYear = $_POST['collegeYear'];
     
-                $sql = "insert into student(`StdIdPicture`, `StdNumber`, `QR_Code`, `StdEmailAdd`, `Scholarship`, `StdLastName`, `StdFirstName`, `StdMiddleName`, `ContactNumber`, `SY`, `Sem`, `YearLevel`, `Block`, `Course`, `DateOfReg`, `CivilStatus`, `Age`, `Sex`, `DateOfBirth`, `PlaceOfBirth`, `Nationality`, `Religion`, `HomeHouseNo`, `HomeStreet`, `HomeBarangay`, `HomeTown`, `HomeCity`, `HomeZipCode`, `ProvHouseNo`, `ProvStreet`, `ProvBarangay`, `ProvTown`, `ProvCity`, `ProvZipCode`, `FathersName`, `FathersOccupation`, `FathersContactNo`, `MothersName`, `MothersOccupation`, `MothersContactNo`, `GuardiansName`, `GuardiansOccupation`, `GuardiansContactNo`, `GuardiansHouseNo`, `GuardiansStreet`, `GuardiansBarangay`, `GuardiansTown`, `GuardiansCity`, `GuardiansZipCode`, `FinancialSupport`, `StdNature`, `ElemName`, `ElemAddress`, `ElemHonors`, `ElemSY`, `JhName`, `JhAddress`, `JhHonors`, `JhSY`, `ShName`, `ShAddress`, `ShHonors`, `ShSY`, `CollegeName`, `CollegeAddress`, `CollegeSY`) 
+                $sql = "insert into student(`StdIdPicture`, `StdNumber`, `StdEmailAdd`, `Scholarship`, `StdLastName`, `StdFirstName`, `StdMiddleName`, `ContactNumber`, `SY`, `Sem`, `YearLevel`, `Block`, `Course`, `DateOfReg`, `CivilStatus`, `Age`, `Sex`, `DateOfBirth`, `PlaceOfBirth`, `Nationality`, `Religion`, `HomeHouseNo`, `HomeStreet`, `HomeBarangay`, `HomeTown`, `HomeCity`, `HomeZipCode`, `ProvHouseNo`, `ProvStreet`, `ProvBarangay`, `ProvTown`, `ProvCity`, `ProvZipCode`, `FathersName`, `FathersOccupation`, `FathersContactNo`, `MothersName`, `MothersOccupation`, `MothersContactNo`, `GuardiansName`, `GuardiansOccupation`, `GuardiansContactNo`, `GuardiansHouseNo`, `GuardiansStreet`, `GuardiansBarangay`, `GuardiansTown`, `GuardiansCity`, `GuardiansZipCode`, `FinancialSupport`, `StdNature`, `ElemName`, `ElemAddress`, `ElemHonors`, `ElemSY`, `JhName`, `JhAddress`, `JhHonors`, `JhSY`, `ShName`, `ShAddress`, `ShHonors`, `ShSY`, `CollegeName`, `CollegeAddress`, `CollegeSY`) 
                 values('" . $imgData . "',
                 '" . $stdNumber . "',
-                '" . $qrData . "',
                 '" . $email . "',
                 '" . $scholarship . "',
                 '" . $lname . "',

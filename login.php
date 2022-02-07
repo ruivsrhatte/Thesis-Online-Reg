@@ -14,23 +14,42 @@
     <TITLE>DRLCIFI - Registration Form</TITLE>
 </head>
 <?php require_once "db.php";
+session_start();
 if (isset($_POST["login"])) {
     $StdNumber = mysqli_real_escape_string($con, trim($_POST['stdNo']));
 
-    $sql = mysqli_query($con, "SELECT StdNumber FROM student where StdNumber = '$StdNumber'");
+    $sql = mysqli_query($con, "SELECT `StdNumber`, `Scholarship`, `ContactNumber`, `SY`, `Sem`, `YearLevel`, `Block`, `Course` FROM `student` where StdNumber = '$StdNumber'");
     $count = mysqli_num_rows($sql);
 
 
     if ($count > 0) {
         $fetch = mysqli_fetch_assoc($sql);
         if ($fetch["StdNumber"] == $StdNumber) {
+            
+            $scholarship = $fetch["Scholarship"];
+            $contactNo = $fetch["ContactNumber"];
+            $sy = $fetch["SY"];
+            $sem = $fetch["Sem"];
+            $year = $fetch["YearLevel"];
+            $block = $fetch["Block"];
+            $course = $fetch["Course"];
+
+            $_SESSION['scholarship'] = $scholarship;
+            $_SESSION['contactNo'] = $contactNo;
+            $_SESSION['sy'] = $sy;
+            $_SESSION['sem'] = $sem;
+            $_SESSION['year'] = $year;
+            $_SESSION['block'] = $block;
+            $_SESSION['course'] = $course;
+
+
+            $_SESSION['stdNo'] = $StdNumber;
             header("Location: old-student.php");
         } else {
             echo "It seems like you are already";
         }
     }
 }
-
 ?>
 
 <body>
@@ -52,7 +71,7 @@ if (isset($_POST["login"])) {
                                     <button type="submit" name="login" class="btn btn-primary btn-lg btn-block" style=" background: #980702">Login</button>
                                 </div>
                                 <div class="col text-center">
-                                    <p style="color: gray;" class="label label-info">Don't have a Student No?</p><a href="" class="btn btn-primary btn-lg">Enroll as New Student</a>
+                                    <p style="color: gray;" class="label label-info">Don't have a Student No?</p><a href="index.php" class="btn btn-primary btn-lg">Enroll as New Student</a>
                                 </div>
                             </form>
                         </div>

@@ -148,7 +148,7 @@ if (!isset($filename)) {
 		//$H = $pdf->GetY($_SESSION['course']);
 		//$height = $H - $Y;
 		//$H=$pdf->MultiCell($w, 10, $_SESSION['course'], 1, 1, false);
-		$pdf->Cell(60, 50, 'Course:', 1, 0, false);
+		$pdf->Cell(60, 40, 'Course:', 1, 0, false);
 		$pdf->MultiCell($w, 10, $_SESSION['course'], 1, 1, false);
 		//$Y=$H;
 		// $pdf->SetX((150-$w)/2);
@@ -159,10 +159,7 @@ if (!isset($filename)) {
 		$pdf->Output();
 	}
 }
-?>
 
-
-<?php
 
 $f = "visit.php";
 if (!file_exists($f)) {
@@ -183,11 +180,13 @@ function getUsernameFromEmail($email)
 }
 
 if (isset($_POST['submit'])) {
+	//$file_encoded = base64_encode(file_get_contents($codeContents)); //this is stringed data. save this in database. 
 	$tempDir = 'temp/';
 	$email = $_POST['email'];
 	$stdNumber =  $_POST['stdNo'];
 	$filename = $stdNumber;
 	$codeContents = 'mailto:' . $stdNumber . '?subject=' . urlencode($email);
+
 	QRcode::png($codeContents, $tempDir . '' . $filename . '.png', QR_ECLEVEL_L, 5);
 }
 ?>
@@ -195,7 +194,6 @@ if (isset($_POST['submit'])) {
 
 <head>
 	<title>(QR) Code Generator</title>
-
 	<link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link href="css/registration.css" rel="stylesheet" type="text/css" />
@@ -203,23 +201,6 @@ if (isset($_POST['submit'])) {
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<!--
-<section class="vh-100 gradient-custom mb-md-5">
-	<div class="container py-5 h-100">
-		<div class="row justify-content-center align-items-center h-100 mb-100">
-			<div class="col-12 col-lg-9 col-xl-7 mb-3">
-				<div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
-					<div class="card-body p-4 p-md-5">
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
--->
-
-
 <section class="vh-100 gradient-custom ">
 	<div id="download" class="container py-5 h-100">
 		<div class="row justify-content-center align-items-center h-100 mb-100">
@@ -227,29 +208,27 @@ if (isset($_POST['submit'])) {
 				<div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
 					<div class="card-body p-4 p-md-5">
 						<h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">(QR) Code Generator</h3>
-						<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+						<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . '?file=' . $filename); ?>">
+							<!-- START OF QR CODE IMAGE-->
 							<div class="mb-4">
-								<label class="col-12 mb-4">
+								<label class="col-12 mb-5 text text-secondary">
 									<b>Note:</b>
 									<br>
-									Download and present this QR Code
-									at the registrar's office of
-									Dr. Ruby Lanting Casaul Educational Foundation, Inc.
-									located at Tomas Cabiles, St., Tabaco City
+									Click the <b>"Generate"</b> button below to generate your QR Code.<br>
+									Once your QR code is successfully generated,
+									click the <b>"Download PDF File"</b> button below your generated QR Code image.
 								</label>
 								<center>
 									<div class="qrframe" style="border:2px solid black; width:210px; height:210px;">
 										<input type="hidden" name="qr" value="<?php echo 'temp/' . @$filename . '.png' ?>" />
 										<?php echo '<img src="temp/' . @$filename . '.png" style="width:200px; height:200px;"><br>'; ?>
 									</div>
-									<button class="btn btn-primary submitBtn" type="submit" name="toPDF" style="width:210px; margin:5px 0;">Download QR Code</button>
+									<button href="" class="btn btn-primary submitBtn" type="submit" name="toPDF" style="width:210px; margin:5px 0;">Download PDF File</button>
 								</center>
 							</div>
 
-							<!--<div class="row">
-                            <input name="userImage" type="file" id="imgInp" class="form-control form-group" value="<?= $_SESSION['imgData'] ?>">
-                            </div>-->
-							<div class="row">
+							<!-- START OF SESSIONED DATA-->
+							<div class="row" hidden>
 								<div class="col-md-6  mb-4">
 									<div class="form-group">
 										<label class="form-label" for="refNo">Reference No.</label>
@@ -266,7 +245,7 @@ if (isset($_POST['submit'])) {
 								</div>
 							</div>
 
-							<div class="row">
+							<div class="row" hidden>
 								<div class="col-md-6  mb-4">
 									<div class="form-group">
 										<label class="form-label">Scholarship</label>
@@ -283,7 +262,7 @@ if (isset($_POST['submit'])) {
 								</div>
 							</div>
 
-							<div class="row">
+							<div class="row" hidden>
 								<div class="col-md-6  mb-4">
 									<div class="form-group">
 										<label class="form-label">First Name</label>
@@ -300,7 +279,7 @@ if (isset($_POST['submit'])) {
 								</div>
 							</div>
 
-							<div class="row">
+							<div class="row" hidden>
 								<div class="col-md-6  mb-4">
 									<div class="form-group">
 										<label class="form-label">School Year</label>
@@ -317,7 +296,7 @@ if (isset($_POST['submit'])) {
 								</div>
 							</div>
 
-							<div class="row">
+							<div class="row" hidden>
 								<div class="col-md-6  mb-4">
 									<div class="form-group">
 										<label class="form-label">Year Level</label>
@@ -335,7 +314,7 @@ if (isset($_POST['submit'])) {
 
 							</div>
 
-							<div class="row">
+							<div class="row" hidden>
 								<div class="col-md-6  mb-4">
 									<div class="form-group">
 										<label class="form-label">Course</label>
