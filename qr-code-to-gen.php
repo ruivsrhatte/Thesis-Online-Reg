@@ -220,10 +220,10 @@ if (isset($_POST['submit'])) {
 								</label>
 								<center>
 									<div class="qrframe" style="border:2px solid black; width:210px; height:210px;">
-										<input type="hidden" name="qr" value="<?php echo 'temp/' . @$filename . '.png' ?>" />
-										<?php echo '<img src="temp/' . @$filename . '.png" style="width:200px; height:200px;"><br>'; ?>
+										<input type="hidden" name="qr" id="qrCodePicture" value="<?php echo 'temp/' . @$filename . '.png' ?>" />
+										<?php echo '<img src="temp/' . @$filename . '.png" style="width:200px; height:200px;" ><br>'; ?>
 									</div>
-									<button href="" class="btn btn-primary submitBtn" type="submit" name="toPDF" style="width:210px; margin:5px 0;">Download PDF File</button>
+									<button href="" class="btn btn-primary submitBtn" type="submit" name="toPDF" id="downloadPDF" style="width:210px; margin:5px 0;">Download PDF File</button>
 								</center>
 							</div>
 
@@ -331,7 +331,7 @@ if (isset($_POST['submit'])) {
 								</div>
 							</div>
 							<div class="form-group">
-								<button type="submit" name="submit" class="btn btn-primary btn-lg btn-block" style=" background: #980702" onClick="">Generate</button>
+								<button type="submit" id="generate" name="submit" class="btn btn-primary btn-lg btn-block" style=" background: #980702">Generate</button>
 							</div>
 						</form>
 					</div>
@@ -340,5 +340,22 @@ if (isset($_POST['submit'])) {
 		</div>
 	</div>
 </section>
+<script>
+        //SELECT AN VACS IMAGE
+	//	const qrCodePicture = document.getElementById("qrcode");
+	//	const btn = document.getElementById("downloadPDF");
+	//	qrCodePicture.onchange = function () {
+	//		btn.style.display = "block";
+	//	};
 
+		//SELECT AN VACS IMAGE
+	//	qrCodePicture.onchange = evt => {
+	//		const [file] = qrCodePicture.files
+    //        if (file) {
+	//			downloadPDF.style.display = "block";
+     //       }       
+    //    }
+</script>
+
+	
 </html>

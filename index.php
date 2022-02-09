@@ -40,10 +40,10 @@
                                         <button type="button" class="btn btn-success btn-lg mb-5" style="border-radius: 50px; 
                                      width: 100%;border: none;
                                     background: #980702" onClick="document.getElementById('register').scrollIntoView();">
-                                            New Student
+                                            ENROLL NOW
                                         </button>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4" hidden>
                                         <a href="login.php" type="button" class="btn btn-success btn-lg mb-5 " style="border-radius: 50px; 
                                      width: 100%;border: none;
                                     background: #980702; color: white; text-decoration: none;">
@@ -52,7 +52,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -196,9 +195,10 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6  mb-4">
+                                    <div class="col-md-6  mb-1">
                                         <div class="form-group">
                                             <input type="text" name="sy" class="form-control form-group" placeholder="School Year" />
+                                            <small><i><label for="shYear" class="form-label">e.g. 2022-2023</label></i></small>
                                         </div>
                                     </div>
                                     <div class="col-md-6  mb-4">
@@ -223,7 +223,8 @@
                                         </select>
 
                                     </div>
-                                    <div class="col-md-6  mb-4" hidden>
+                                    <!--
+                                    <div class="col-md-6  mb-4" hidden> 
                                         <select name="block" class="select form-control">
                                             <option value="" disabled selected hidden>-- Block --</option>
                                             <option value="A">A</option>
@@ -233,6 +234,7 @@
                                             <option value="None">None</option>
                                         </select>
                                     </div>
+                                        -->
                                 </div>
 
                                 <div class="row">
@@ -275,12 +277,31 @@
 
                             <div class="row">
                                 <div class="col-md-6 col-lg-6 mb-4 mb-4">
-                                    <select name="sex" class="select form-control">
-                                        <option value="" disabled selected hidden>-- Sex --</option>
+
+                                    <select name="sex" class="select form-control" id="genderDropdown" onchange='genderOthers(this.value);'>
+                                        <option value="" disabled selected hidden>-- Gender --</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
+                                        <option value="Others">Other</option>
                                     </select>
+                                    <input type="text" name="sex" id="others" class="form-control form-group border-top-0 border-left-0 border-right-0 border-bottom-5" placeholder="Gender (Other)" style='display:none;' />
+
                                 </div>
+
+                                <script type="text/javascript">
+                                    function genderOthers(val) {
+                                        var element = document.getElementById('others');
+                                        //var dropdown = document.getElementById('genderDropdown');
+                                        if (val == '-- Gender --' || val == 'Others') {
+                                            element.style.display = 'block';
+                                            element.focus();
+                                            //genderDropdown.style.display = 'none';
+                                        } else {
+                                            element.style.display = 'none';
+                                        }
+                                    }
+                                </script>
+
                                 <div class="col-md-6 col-lg-6 mb-4 mb-4">
                                     <div class="form-group datepicker w-100 input-group date" id="datepicker">
                                         <input type="text" class="form-control form-group" name="dateOfBirth" placeholder="Birthday" />
@@ -403,8 +424,6 @@
                     <div class="card shadow-3-strong card-registration" style="border-radius: 15px;">
                         <div class="card-body p-4 p-md-5">
                             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Parents/Guardian</h3>
-
-
                             <!-- FATHERS INFO START-->
                             <label class="form-label">Father's Information</label>
 
@@ -419,7 +438,7 @@
                                         <input type="text" name="fathersGivenName" class="form-control form-group" placeholder="Given Name" />
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="row">
@@ -435,7 +454,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">      
+                            <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-group">
                                         <input type="tel" name="fathersContact" class="form-control form-group" placeholder="Contact No." />
@@ -449,34 +468,34 @@
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="text" name="MothersSurname" class="form-control form-group" placeholder="Surname" />
+                                        <input type="text" name="mothersMaidenName" class="form-control form-group" placeholder="Maiden Name" />
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="text" name="MothersGivenName" class="form-control form-group" placeholder="Given Name" />
+                                        <input type="text" name="mothersGivenName" class="form-control form-group" placeholder="Given Name" />
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="text" name="MothersMiddleName" class="form-control form-group" placeholder="Middle Name" />
+                                        <input type="text" name="mothersMiddleName" class="form-control form-group" placeholder="Middle Name" />
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="text" name="MothersOccupation" class="form-control form-group" placeholder="Occupation" />
+                                        <input type="text" name="mothersOccupation" class="form-control form-group" placeholder="Occupation" />
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row">      
+                            <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-group">
-                                        <input type="tel" name="MothersContact" class="form-control form-group" placeholder="Contact No." />
+                                        <input type="tel" name="mothersContact" class="form-control form-group" placeholder="Contact No." />
                                     </div>
                                 </div>
                             </div>
@@ -495,12 +514,21 @@
                                         <input type="text" name="guardiansOccupation" class="form-control form-group" placeholder="Occupation" />
                                     </div>
                                 </div>
-                                <div class="col-md-3 mb-">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <input type="tel" name="guardiansContact" class="form-control form-group" placeholder="Contact No." />
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-9 mb-4">
+                                    <div class="form-group">
+                                        <input type="text" name="relationshipToGuardian" class="form-control form-group" placeholder="Relationship to your Guardian" />
+                                    </div>
+                                </div>   
+                            </div>
+
                             <!-- GUARDIAN INFO END-->
 
                             <!-- GUARDIANS ADDRESS START -->
@@ -648,7 +676,7 @@
                                 <div class="col-md-6 col-lg-6 mb-1">
                                     <div class="form-group">
                                         <input type="text" name="shYear" id="shYear" class="form-control form-group" placeholder="Year Began and Completed " />
-                                        <small><i><label for="shYear" class="form-label">e.g. 2015-2018</label></i></small>
+                                          <small><i><label for="shYear" class="form-label">e.g. 2015-2018</label></i></small>
                                     </div>
                                 </div>
                             </div>
@@ -733,11 +761,23 @@
                         </div>
                     </div>
                 </div>
-
                 </form>
             </div>
         </div>
     </section>
+
+    <script>
+        //SELECT AN VACS IMAGE
+        vacsImg.onchange = evt => {
+            const [file] = vacsImg.files
+            if (file) {
+                vacsPreview.src = URL.createObjectURL(file);
+                vacsPreview1.style.display = "block";
+            }
+        }
+    </script>
+
+    <!--
     <script type="text/javascript">
         //TO SHOW THE IMAGE INPUT
         function showDiv(select) {
@@ -755,22 +795,14 @@
 
             } else {
 
-                document.getElementById('vacsImg').style.display = "none";
-                document.getElementById('vacsPreview1').style.display = "none";
+                document.getElementById('vacsImg').style.display = "block";
+                document.getElementById('vacsPreview1').style.display = "block";
                 document.getElementById("vacsImg").value = "";
                 document.getElementById("vacsPreview").src = "img/LOGO-CASAUL1.png";
 
             }
         }
     </script>
-    <script>
-        //SELECT AN IMAGE
-        vacsImg.onchange = evt => {
-            const [file] = vacsImg.files
-            if (file) {
-                vacsPreview.src = URL.createObjectURL(file);
-                vacsPreview1.style.display = "block";
-            }
-        }
-    </script>
+    -->
+    
 </body>
