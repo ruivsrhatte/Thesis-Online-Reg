@@ -1,0 +1,83 @@
+/*
+.gradient-custom {
+     fallback for old browsers 
+
+background: #f093fb;    
+
+
+/* Chrome 10-25, Safari 5.1-6 
+
+background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));*/
+
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+    background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+   
+
+}
+*/
+
+body {
+    background-image: -webkit-linear-gradient(60deg, rgb(242 230 230), rgb(242 230 230));
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    margin: 0;
+    padding: 0;
+    font: 1;
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+.card-registration .btn-light {
+    background-color: white;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+
+@media (max-width: 575.98px) {
+    .card .card-body {
+        line-height: 500%;
+    }
+}
+
+
+/* Small devices (landscape phones, less than 768px)*/
+
+@media (max-width: 767.98px) {
+    .card .card-body {
+        line-height: 500%;
+        height: 50rem;
+    }
+}
+
+
+/* Medium devices (tablets, less than 992px)*/
+
+@media (max-width: 991.98px) {}
+
+
+/* Large devices (desktops, less than 1200px)*/
+
+@media (max-width: 1199.98px) {}
+
+
+/* Extra large devices (large desktops)*/
+
+
+/* No media query since the extra-large breakpoint has no upper bound on its width*/
