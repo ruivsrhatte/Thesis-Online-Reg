@@ -216,8 +216,7 @@ if (isset($_POST['enroll'])) {
                 '" . $collegeAddress . "',   
                 '" . $collegeYear . "',  
 
-                '" . $vaccine . "' , 
-                '" . $vacsCardImage . "'  
+                '" . $vaccine . "' ,  
                 )";
 
             $current_id = mysqli_query($con, $sql) or die("<b>Error:</b> Error on Inserting Data<br/>" . mysqli_error($con));
